@@ -8,9 +8,9 @@ BEGIN
 CREATE DATABASE [Ferreteria]
  CONTAINMENT = NONE
  ON  PRIMARY 
-( NAME = N'Ferreteria', FILENAME = N'C:\Users\Admin\Ferreteria.mdf' , SIZE = 8192KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB )
+( NAME = N'Ferreteria', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL11.SQLEXPRESS\MSSQL\DATA\Ferreteria.mdf' , SIZE = 8192KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB )
  LOG ON 
-( NAME = N'Ferreteria_log', FILENAME = N'C:\Users\Admin\Ferreteria_log.ldf' , SIZE = 8192KB , MAXSIZE = 2048GB , FILEGROWTH = 65536KB )
+( NAME = N'Ferreteria_log', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL11.SQLEXPRESS\MSSQL\DATA\Ferreteria_log.ldf' , SIZE = 8192KB , MAXSIZE = 2048GB , FILEGROWTH = 65536KB )
 END
 GO
 ALTER DATABASE [Ferreteria] SET COMPATIBILITY_LEVEL = 110
@@ -128,7 +128,7 @@ BEGIN
 CREATE TABLE [dbo].[Proveedor](
 	[ID_Proveedor] [int] NOT NULL,
 	[Nombre] [varchar](50) NOT NULL,
-	[Año_Registro] [date] NOT NULL,
+	[AÃ±o_Registro] [date] NOT NULL,
 	[Descripcion] [varchar](200) NULL,
  CONSTRAINT [PK_Proveedor] PRIMARY KEY CLUSTERED 
 (
@@ -354,10 +354,10 @@ INSERT [dbo].[Factura] ([ID_Factura], [ID_Ticket_FK], [ID_Cliente_FK]) VALUES (6
 INSERT [dbo].[Factura] ([ID_Factura], [ID_Ticket_FK], [ID_Cliente_FK]) VALUES (7, 6, 7)
 INSERT [dbo].[Factura] ([ID_Factura], [ID_Ticket_FK], [ID_Cliente_FK]) VALUES (8, 9, 9)
 INSERT [dbo].[Factura] ([ID_Factura], [ID_Ticket_FK], [ID_Cliente_FK]) VALUES (9, 8, 9)
-INSERT [dbo].[Proveedor] ([ID_Proveedor], [Nombre], [Año_Registro], [Descripcion]) VALUES (1, N'Grupo Sigma', CAST(N'2017-10-12' AS Date), N'Descripcion')
-INSERT [dbo].[Proveedor] ([ID_Proveedor], [Nombre], [Año_Registro], [Descripcion]) VALUES (2, N'Arca Continental', CAST(N'2013-12-04' AS Date), N'Descripcion 2')
-INSERT [dbo].[Proveedor] ([ID_Proveedor], [Nombre], [Año_Registro], [Descripcion]) VALUES (3, N'Sigma 2', CAST(N'2002-01-12' AS Date), N'Descripcion 3')
-INSERT [dbo].[Proveedor] ([ID_Proveedor], [Nombre], [Año_Registro], [Descripcion]) VALUES (4, N'Mario y Asociados', CAST(N'2000-01-13' AS Date), N'Descripcion 4')
+INSERT [dbo].[Proveedor] ([ID_Proveedor], [Nombre], [AÃ±o_Registro], [Descripcion]) VALUES (1, N'Grupo Sigma', CAST(N'2017-10-12' AS Date), N'Descripcion')
+INSERT [dbo].[Proveedor] ([ID_Proveedor], [Nombre], [AÃ±o_Registro], [Descripcion]) VALUES (2, N'Arca Continental', CAST(N'2013-12-04' AS Date), N'Descripcion 2')
+INSERT [dbo].[Proveedor] ([ID_Proveedor], [Nombre], [AÃ±o_Registro], [Descripcion]) VALUES (3, N'Sigma 2', CAST(N'2002-01-12' AS Date), N'Descripcion 3')
+INSERT [dbo].[Proveedor] ([ID_Proveedor], [Nombre], [AÃ±o_Registro], [Descripcion]) VALUES (4, N'Mario y Asociados', CAST(N'2000-01-13' AS Date), N'Descripcion 4')
 INSERT [dbo].[Producto] ([ID_Producto], [ID_Proveedor_FK], [Nombre], [Precio]) VALUES (1, 1, N'Yoplait', 6.0000)
 INSERT [dbo].[Producto] ([ID_Producto], [ID_Proveedor_FK], [Nombre], [Precio]) VALUES (2, 2, N'Coca-cola 2.5L', 25.0000)
 INSERT [dbo].[Producto] ([ID_Producto], [ID_Proveedor_FK], [Nombre], [Precio]) VALUES (3, 2, N'Barrilito Durazno 600ml', 12.0000)
